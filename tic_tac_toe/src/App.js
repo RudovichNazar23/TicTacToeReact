@@ -1,8 +1,10 @@
-import './App.css';
+import './index.css';
+import HomePageContainer from './components/HomePageContainer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
+      <HomePageContainer />
     </div>
   );
 }
