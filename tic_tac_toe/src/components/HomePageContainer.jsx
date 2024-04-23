@@ -3,7 +3,7 @@ import { useState } from "react";
 import HomePageHeader from "./HomePageComponents/HomePageHeader";
 import HomePageIcon from "./HomePageComponents/HomePageIcon";
 import HomePageButton from "./HomePageComponents/HomePageButton";
-import ModalFormContainer from "./ModalFormContainer";
+import TwoPlayerForm from "./TwoPlayersForm";
 
 
 export default function HomePageContainer(){
@@ -19,7 +19,7 @@ export default function HomePageContainer(){
             {
                 isOpen ? 
                 (
-                    <ModalFormContainer onCancel={onPlayWithFriend}/>
+                    <TwoPlayerForm onCancel={onPlayWithFriend} />
                 ) 
                 : 
                 (
