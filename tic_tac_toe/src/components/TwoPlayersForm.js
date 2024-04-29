@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import ModalFormContainer from "./ModalFormContainer";
-import GameField from "./GameField";
+import GameFieldContainer from "./GameFieldContainer";
 
 export default function TwoPlayerForm({ onCancel }){
     const [isFormsOpen, setIsFormsOpen] = useState(true);
@@ -26,7 +26,7 @@ export default function TwoPlayerForm({ onCancel }){
     return (
         isGameFieldOpen 
         ? 
-            <GameField/> 
+            <GameFieldContainer/> 
         :
         isFormsOpen
         ?
