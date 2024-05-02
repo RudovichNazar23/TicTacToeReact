@@ -1,7 +1,7 @@
-import GameField from "./GameField";
-import GameFieldFooter from "./GameFieldFooter";
+import GameBoard from "./GameBoardComponents/GameBoard";
+import GameBoardFooter from "./GameBoardComponents/GameBoardFooter";
 
-export default function GameFieldContainer(){
+export default function GameBoardContainer(){
     const player1 = JSON.parse(sessionStorage.getItem("player1"));
     const player2 = JSON.parse(sessionStorage.getItem("player2"));
 
@@ -18,8 +18,8 @@ export default function GameFieldContainer(){
             >
                 End game session
             </button>
-            <GameField />
-            <GameFieldFooter player1={player1} player2={player2} />
+            <GameBoard />
+            <GameBoardFooter player1={player1} player2={player2} />
         </div>
     );
 };
