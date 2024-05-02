@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function GameFieldFooter({ player1, player2 }){
+export default function GameBoardFooter({ player1, player2 }){
     const intialGameScore = {};
 
     intialGameScore[player1] = 0;
