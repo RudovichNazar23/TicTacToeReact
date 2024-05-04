@@ -1,4 +1,6 @@
 import { useState } from "react";
+import checkWinner from "./checkWinner";
+
 
 export default function useGameBoardState(){
     const initialBoardState = [
@@ -11,21 +13,24 @@ export default function useGameBoardState(){
     const circleIcon = "O";
 
     const [board, setBoard] = useState(initialBoardState);
-    const [currentIcon, setCurrentIcon] = useState(true);
+    const [currentIcon, setCurrentIcon] = useState(crossIcon);
+    const [isWon, setIsWon] = useState(false);
 
     const setCellValue = (rowIndex, cellIndex) => {
-        if (board[rowIndex][cellIndex]) return;
-        if(currentIcon){
+        if (board[rowIndex][cellIndex] || isWon) return;
+        if(currentIcon === crossIcon){
             board[rowIndex][cellIndex] = crossIcon;
-            setCurrentIcon(false);
             setBoard(board);
+            if(checkWinner(board)) setIsWon(true);
+            else setCurrentIcon(circleIcon);
         }
         else{
             board[rowIndex][cellIndex] = circleIcon;
-            setCurrentIcon(true);
             setBoard(board);
+            if(checkWinner(board)) setIsWon(true);
+            else setCurrentIcon(crossIcon);
         }
     };
 
-    return {board, setCellValue};
+    return {board, setCellValue, isWon, currentIcon};
 };

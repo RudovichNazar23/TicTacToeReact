@@ -5,7 +5,7 @@ import GameBoardContainer from "./GameBoardContainer";
 
 export default function TwoPlayerForm({ onCancel }){
     const [isFormsOpen, setIsFormsOpen] = useState(true);
-    const [isGameFieldOpen, setIsGameFieldOpen] = useState(false);
+    const [isGameBoardOpen, setIsGameBoardOpen] = useState(false);
 
 
     const onSaveFirstPlayer = (event) => {
@@ -20,11 +20,11 @@ export default function TwoPlayerForm({ onCancel }){
         event.preventDefault();
         if(!event.currentTarget.playerName.value) return;
         sessionStorage.setItem("player2", JSON.stringify(event.currentTarget.playerName.value));
-        setIsGameFieldOpen(true);
+        setIsGameBoardOpen(true);
     };
 
     return (
-        isGameFieldOpen 
+        isGameBoardOpen 
         ? 
             <GameBoardContainer/> 
         :
