@@ -32,5 +32,10 @@ export default function useGameBoardState(){
         }
     };
 
-    return {board, setCellValue, isWon, currentIcon};
+    const resetGameBoard = () => {
+        setBoard(initialBoardState);
+        setIsWon(false);
+    };
+
+    return {board, setCellValue, isWon, currentIcon, resetGameBoard};
 };
