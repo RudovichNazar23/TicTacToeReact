@@ -26,9 +26,8 @@ export default function HomePageContainer(){
                     <>
                         <HomePageHeader />
                         <HomePageIcon />
-                        <div className="container d-flex flex-row justify-content-between p-3 m-auto ">
+                        <div className="container d-flex flex-row justify-content-center p-3 m-auto ">
                             <HomePageButton buttonContent={"Play with friend"} onClick={onPlayWithFriend}/>
-                            <HomePageButton buttonContent={"Play with Computer"} />
                         </div>
                     </>
                 )

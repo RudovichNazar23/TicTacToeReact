@@ -11,7 +11,7 @@ export default function TwoPlayerForm({ onCancel }){
     const onSaveFirstPlayer = (event) => {
         event.preventDefault();
         if(!event.currentTarget.playerName.value) return;
-        sessionStorage.setItem("player1", JSON.stringify(event.currentTarget.playerName.value))
+        sessionStorage.setItem("player1", JSON.stringify(event.currentTarget.playerName.value));
         event.currentTarget.playerName.value = "";
         setIsFormsOpen(!isFormsOpen);
     };
